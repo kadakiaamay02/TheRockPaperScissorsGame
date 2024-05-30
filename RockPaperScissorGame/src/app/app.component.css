@@ -1,0 +1,81 @@
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    text-align: center;
+    flex-wrap: wrap; 
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+
+  .scorecard {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the items */
+    align-items: center; /* Aligns the items vertically in the center */
+    padding-left: 20rem;
+    padding-right: 20rem;
+    flex-wrap: wrap; 
+}
+
+
+.scorecard h2 {
+    margin: 0; /* Removes default margins for a cleaner look */
+}
+
+.emojis {
+    display: flex;
+    flex-wrap: wrap; /* Allow emojis to wrap to the next line */
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+.emoji {
+    font-size: 8vw; /* Adjust the size of the emoji relative to viewport width */
+    cursor: pointer;
+    margin: 5px; /* Add spacing between emojis */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.emoji:hover {
+    transform: scale(1.2); /* Enlarge emoji on hover */
+}
+
+@media screen and (max-width: 600px) {
+    .emojis {
+        flex-direction: column; /* Display emojis in a column for smaller screens */
+    }
+    .scorecard{
+        flex-direction: column;
+    }
+}
+
+.content{
+    padding-top: 10rem;
+    padding-left: 40rem;
+    padding-right: 40rem;
+    display: flex;
+    justify-content: space-between; /* Distributes space between the items */
+    align-items: center; /* Aligns the items vertically in the center */
+}
+.content a{
+    margin: 0;
+    padding-right: 2rem;
+}
+
+.flash-text{
+    padding-top: 2rem;
+    font-size: 150%;
+    text-align: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+  
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }

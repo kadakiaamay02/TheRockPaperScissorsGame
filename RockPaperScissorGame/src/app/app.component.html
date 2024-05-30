@@ -1,0 +1,27 @@
+<!-- Toolbar -->
+<div>
+  <h1>{{title}}</h1>
+</div>
+
+<div class="scorecard">
+  <h2>Wins: {{wins}}</h2>
+  <h2>Draws: {{draws}}</h2>
+  <h2>Losses: {{losses}}</h2>
+</div>
+
+<body>
+  <div class="scorecard">
+    <span class="flash-text" *ngIf="flashText">{{ flashTextdata }}</span>
+  </div>
+  <!-- Display flash text -->
+  <div class="emojis" role="main">
+
+    <span class="emoji" (click)="onEmojiClick(1)">🪨</span>
+    <span class="emoji" (click)="onEmojiClick(2)">📝</span>
+    <span class="emoji" (click)="onEmojiClick(3)">✂️</span>
+
+  </div>
+
+
+</body>
+<router-outlet></router-outlet>
