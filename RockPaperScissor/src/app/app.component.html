@@ -1,0 +1,38 @@
+<!-- Toolbar -->
+<div>
+  <h1>{{title}}</h1>
+</div>
+
+
+
+<body>
+  <div class="content">
+
+    <div class="scorecard">
+      <h2>Wins: {{wins}}</h2>
+      <h2>Losses: {{losses}}</h2>
+      <h2>Draws: {{draws}}</h2>
+    </div>
+
+    <!-- Display flash text -->
+    <div class="emojis" role="main">
+      <span class="emoji" (click)="onEmojiClick(1)">🪨</span>
+      <span class="emoji" (click)="onEmojiClick(2)">📝</span>
+      <span class="emoji" (click)="onEmojiClick(3)">✂️</span>
+    </div>
+
+    <div class="flash-result">
+        <span class="flash-text" [@if]="flashText">{{ flashTextdata }}</span>
+    </div>
+
+
+    <div class="button">
+      <button class="reset-button" (click)="resetScores()">Reset Scores</button>
+    </div>
+
+
+  </div>
+
+
+
+</body>
