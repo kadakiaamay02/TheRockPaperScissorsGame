@@ -1,0 +1,7 @@
+{
+  "name": "TheRockPaperScissorGame",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
