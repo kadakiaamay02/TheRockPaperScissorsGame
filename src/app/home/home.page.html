@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      The Rock Paper Scissor Game
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">The Rock Paper Scissor Game
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <body>
+    <div class="content">
+  
+      <div class="scorecard">
+        <ion-text color="primary">
+        <h2>Wins: {{wins}}</h2>
+        <h2>Losses: {{losses}}</h2>
+        <h2>Draws: {{draws}}</h2>
+        </ion-text>
+      </div>
+  
+      <!-- Display flash text -->
+      <div class="emojis" role="main">
+        <span class="emoji" (click)="onEmojiClick(1)">🪨</span>
+        <span class="emoji" (click)="onEmojiClick(2)">📝</span>
+        <span class="emoji" (click)="onEmojiClick(3)">✂️</span>
+      </div>
+  
+
+
+      
+    <div class="flash-result"> 
+      <ion-text color="primary">
+        <p class="flash-text" [@if]="flashText">{{ flashTextdata }}</p>
+      </ion-text>
+    </div>
+  
+  
+      <div class="button">
+        <button class="reset-button" (click)="resetScores()">Reset Scores</button>
+      </div>
+  
+  
+    </div>
+  
+  
+  
+  </body>
+ 
+</ion-content>
