@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonText } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonText, IonButton } from '@ionic/angular/standalone';
 import { GameService, ROCK, PAPER, SCISSORS } from 'src/app/game.service';
 
+enum OriginalColor {
+  Hex = '#121212'
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonText],
+  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent, IonText],
 })
 export class HomePage {
   ngOnInit(): void {
@@ -81,16 +84,12 @@ export class HomePage {
       console.warn('ion-app not found');
       return;
     }
-  
-    // Save the original color
-    const originalColor = getComputedStyle(app).getPropertyValue('--ion-background-color');
-  
     // Set the new color
     app.style.setProperty('--ion-background-color', color);
   
     // Reset to the original color after 500 ms
     setTimeout(() => {
-      app.style.setProperty('--ion-background-color', originalColor);
+      app.style.setProperty('--ion-background-color', OriginalColor.Hex);
     }, 650);
   }
   
@@ -132,3 +131,4 @@ export class HomePage {
   
   
 }
+

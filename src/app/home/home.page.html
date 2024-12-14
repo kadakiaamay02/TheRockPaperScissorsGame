@@ -9,8 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">The Rock Paper Scissor Game
-      </ion-title>
+      <ion-title size="large" class="game-title">The Rock Paper Scissor Game</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -19,13 +18,10 @@
   
       <div class="scorecard">
         <ion-text color="primary">
-        <h2>Wins: {{wins}}</h2>
-        <h2>Losses: {{losses}}</h2>
-        <h2>Draws: {{draws}}</h2>
+        <h2>Wins: {{wins}}  Losses: {{losses}} Draws: {{draws}}</h2>
         </ion-text>
       </div>
   
-      <!-- Display flash text -->
       <div class="emojis" role="main">
         <span class="emoji" (click)="onEmojiClick(1)">🪨</span>
         <span class="emoji" (click)="onEmojiClick(2)">📝</span>
