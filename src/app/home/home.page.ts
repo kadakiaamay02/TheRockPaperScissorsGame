@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonText, IonButton } from '@ionic/angular/standalone';
 import { GameService, ROCK, PAPER, SCISSORS } from 'src/app/game.service';
 
-enum OriginalColor {
-  Hex = '#121212'
-}
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +12,24 @@ enum OriginalColor {
   imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent, IonText],
 })
 export class HomePage {
+Move = {
+  ROCK: '🪨',
+  PAPER: '📝',
+  SCISSOR:'✂️'
+
+};
+
+OriginalColor = {
+  Hex: '#121212'
+}
+
+Timer = {
+  time: 800
+}
+
+
   ngOnInit(): void {
+    
     this.loadScores();
   }
   
@@ -36,15 +51,15 @@ export class HomePage {
     let move;
   switch(computerMove){
     case 1:{
-      move = '🪨';
+      move = this.Move.ROCK;
       break;
     }
     case 2: {
-      move = '📝';
+      move = this.Move.PAPER;
       break;
     }
     default: {
-      move = '✂️';
+      move = this.Move.SCISSOR;
       break;
     }
   }
@@ -52,7 +67,7 @@ export class HomePage {
       case 'win': {
         color = 'lightgreen';
         this.flashTextdata = 'Computer played: ' +  move + ', you Win!';
-        this.wins = this.wins+1;
+        this.wins = this.wins + 1;
         break;
       }
       case 'lose': {
@@ -64,7 +79,7 @@ export class HomePage {
       case 'draw': {
         color = 'lightyellow';
         this.flashTextdata = 'Computer played: ' +  move + ', its a Draw!';
-        this.draws = this.draws +1;
+        this.draws = this.draws + 1;
         break;
       }
       default: {
@@ -89,15 +104,15 @@ export class HomePage {
   
     // Reset to the original color after 500 ms
     setTimeout(() => {
-      app.style.setProperty('--ion-background-color', OriginalColor.Hex);
-    }, 650);
+      app.style.setProperty('--ion-background-color', this.OriginalColor.Hex);
+    }, this.Timer.time);
   }
   
 
   flashText():void {
     setTimeout(() => {
       this.flashTextdata = ''; 
-    }, 650); // Duration of the flash in milliseconds
+    }, this.Timer.time); // Duration of the flash in milliseconds
   };
 
   getComputerMove(): number {
